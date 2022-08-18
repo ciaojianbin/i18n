@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>i18n</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <style>
+        .loginForm{
+            height: 350px;
+            width: 400px;
+            border: cadetblue solid 1px;
+            border-radius: 4px;
+            box-shadow: 2px 3px gray;
+            margin-top: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px 28px;
+        }
+        .loginForm h2{
+            text-align: center;
+        }
+        .button{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loginForm" >
+        <h2 th:text="#{login.head}"></h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1" th:text="#{login.username}"></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" th:placeholder="#{login.usernamep}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" th:text="#{login.password}"></label>
+                <input type="password" class="form-control" id="exampleInputPassword1" th:placeholder="#{login.passwordp}">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" th:text="#{login.agree}">
+                </label>
+                <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;xxx安全协议</a>与<a href="#">xxx隐私协议</a>
+            </div>
+            <div class="button">
+                <input type="submit" class="btn btn-primary" th:value="#{login.sign}"/>
+            </div>
+            <a class="btn btn-sm left" th:href="@{/login.html(l='zh_CN')}">中文</a>
+            <a class="btn btn-sm right" th:href="@{/login.html(l='en_US')}">English</a>
+        </form>
+    </div>
+</body>
+</html>
